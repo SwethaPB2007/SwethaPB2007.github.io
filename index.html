@@ -9,21 +9,51 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+            background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 100%);
+            color: #1f2937;
+        }
+
+        /* Custom CSS to enhance the Tailwind styling */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #d1d5db;
+            --accent-color: #f43f5e; /* Vibrant pink accent */
+            --text-color: #1f2937;
+        }
+
+        /* Add a subtle transition to all links and buttons for a smoother feel */
+        a, button {
+            transition: all 0.3s ease;
+        }
+
+        /* Vibrant gradient for buttons */
+        .btn-vibrant {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-vibrant:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* More dynamic hover effect for sections */
+        .section-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Header Section -->
-    <header class="bg-white shadow-sm py-4 md:py-6 sticky top-0 z-50">
+    <header class="bg-white shadow-lg py-4 md:py-6 sticky top-0 z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-600">Arya K Sreedharan</a>
+            <a href="#" class="text-2xl font-bold text-blue-600 hover:text-pink-600">Arya K Sreedharan</a>
             <nav>
                 <ul class="flex space-x-4 md:space-x-8">
-                    <li><a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a></li>
-                    <li><a href="#education" class="text-gray-600 hover:text-blue-600 transition duration-300">Education</a></li>
-                    <li><a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a></li>
+                    <li><a href="#about" class="text-gray-600 hover:text-pink-600">About</a></li>
+                    <li><a href="#education" class="text-gray-600 hover:text-pink-600">Education</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-pink-600">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,9 +61,9 @@
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-12">
         <!-- About Section -->
-        <section id="about" class="bg-white p-6 md:p-10 rounded-xl shadow-lg mb-8 md:mb-12 text-center">
+        <section id="about" class="bg-white p-6 md:p-10 rounded-xl shadow-lg mb-8 md:mb-12 text-center transition-all duration-300 ease-in-out section-hover">
             <div class="flex flex-col items-center">
-                <img src="https://placehold.co/150x150/d1d5db/374151?text=A" alt="Profile Picture" class="w-32 h-32 rounded-full border-4 border-blue-200 mb-4 md:mb-6">
+                <img src="https://placehold.co/150x150/f9a8d4/831843?text=Arya" alt="Profile Picture" class="w-32 h-32 rounded-full border-4 border-pink-300 mb-4 md:mb-6 shadow-md">
                 <h1 class="text-4xl font-bold text-gray-900 mb-2">Arya K Sreedharan</h1>
                 <p class="text-xl text-gray-600 mb-4">Computer Science Engineering Student</p>
                 <p class="max-w-prose text-gray-700 leading-relaxed">
@@ -43,10 +73,10 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="bg-white p-6 md:p-10 rounded-xl shadow-lg mb-8 md:mb-12">
+        <section id="education" class="bg-white p-6 md:p-10 rounded-xl shadow-lg mb-8 md:mb-12 transition-all duration-300 ease-in-out section-hover">
             <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Education</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                <div class="bg-blue-100 p-6 rounded-lg shadow-sm">
                     <h3 class="text-2xl font-semibold text-gray-800">Vidya Academy of Science and Technology</h3>
                     <p class="text-gray-600 mt-2">Bachelor of Technology, Computer Science and Engineering</p>
                     <p class="text-gray-500 text-sm mt-1">2021 - Present</p>
@@ -54,7 +84,7 @@
                         Currently pursuing my undergraduate degree at Vidya Academy of Science and Technology. I am focused on building a strong foundation in computer science fundamentals and exploring various fields like web development and data structures.
                     </p>
                 </div>
-                <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                <div class="bg-pink-100 p-6 rounded-lg shadow-sm">
                     <h3 class="text-2xl font-semibold text-gray-800">Velur, Thrissur</h3>
                     <p class="text-gray-600 mt-2">Hometown</p>
                     <p class="text-gray-700 mt-4">
@@ -65,14 +95,14 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bg-white p-6 md:p-10 rounded-xl shadow-lg">
+        <section id="contact" class="bg-white p-6 md:p-10 rounded-xl shadow-lg transition-all duration-300 ease-in-out section-hover">
             <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Get In Touch</h2>
             <div class="flex flex-col items-center">
                 <p class="text-lg text-gray-700 mb-4 text-center max-w-prose">
                     I am always open to new opportunities and collaborations. Feel free to connect with me.
                 </p>
                 <div class="flex space-x-4">
-                    <a href="mailto:youremail@example.com" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">Email Me</a>
+                    <a href="mailto:youremail@example.com" class="btn-vibrant text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:scale-105">Email Me</a>
                     <!-- Placeholder links for other social media -->
                     <a href="#" class="bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-300 transition duration-300">LinkedIn</a>
                 </div>
@@ -89,3 +119,4 @@
 
 </body>
 </html>
+
